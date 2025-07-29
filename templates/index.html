@@ -4,76 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
 </head>
 <body>
-    <div>
-        <h1>Welcome!</h1>
-         <p>This is a simple Flask application test.</p>
-    </div>
-    <div>
-        <p>Current Balance: ${{ "%.2f" | format(balance) }}</p>
-    </div>
+        <header>
+            <h1>Current Balance: ${{ "%.2f" | format(balance) }}</h1>
+        </header>
+        <div class="rectangle"></div>
+    <main>
+        <div class="content-container">
+            <section id="setting-budget" class="left-column">
+                <h2>Set Your Budget</h2>
+                <form action="/" method="get">
+                    <label for="budget_amount">Budget Amount:</label>
+                    <input type="number" id="budget_amount" name="budget_amount" step="0.01"
+                        value="{{ budget_amount if budget_amount is not none else ''}}">
+                    <input type="submit" value="Apply Budget">
+                </form>
+            </section>
 
-    <div>
-        <h2>Add a New Transaction</h2>
-        <form action="/add_transaction" method="post">
-            <label for="transaction_type">Transaction Type:</label>
-            <select id="transaction_type" name="transaction_type" required>
-                <option value="Purchase">Purchase</option>
-                <option value="Refund">Refund</option>
-            </select>
+            <div class="right-column">
+                <div class="content-container">
+                    <section id="new-transaction">
+                        <h2>Add a New Transaction</h2>
+                            <form action="/add_transaction" method="post">
+                                <div>
+                                    <label for="transaction_type">Transaction Type:</label>
+                                    <select id="transaction_type" name="transaction_type" required>
+                                        <option value="Purchase">Purchase</option>
+                                        <option value="Refund">Refund</option>
+                                    </select>
+                                </div>
 
-            <label for="business_establishment">Business Establishment:</label>
-            <input type="text" id="business_establishment" name="business_establishment" required>
+                                <div>
+                                    <label for="business_establishment">Business Establishment:</label>
+                                    <input type="text" id="business_establishment" name="business_establishment" required>
+                                </div>
 
-            <label for="amount">Amount:</label>
-            <input type="number" id="amount" name="amount" step="0.01" required>
+                                <div>
+                                    <label for="amount">Amount:</label>
+                                    <input type="number" id="amount" name="amount" step="0.01" required>
+                                </div>
 
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
+                                <div>
+                                    <label for="date">Date:</label>
+                                    <input type="date" id="date" name="date" required>
+                                </div>
 
-            <label for="catagory">Catagory:</label>
-            <select id="catagory" name="catagory" required>
-                <option value="Food/Groceries">Food/Groceries</option>
-                <option value="Miscellaneous">Miscellaneous</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Transportation">Transportation</option>
-                <option value="Bills">Bills</option>
-            </select>
+                                <div>
+                                    <label for="catagory">Catagory:</label>
+                                    <select id="catagory" name="catagory" required>
+                                        <option value="Food/Groceries">Food/Groceries</option>
+                                        <option value="Miscellaneous">Miscellaneous</option>
+                                        <option value="Entertainment">Entertainment</option>
+                                        <option value="Transportation">Transportation</option>
+                                        <option value="Bills">Bills</option>
+                                    </select>
+                                </div>
 
-            <input type="submit" value="Add Transaction">
-        </form>
-    </div>
-    <div>
-        <h2>Account Activity</h2>
-        <p>Recorded Transactions:</p>
-        {% if transactions %}
-        <table>
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Business Establishment</th>
-                    <th>Amount</th>
-                    <th>Type</th>
-                    <th>Catagory</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for transaction in transactions %}
-                <tr>
-                    <td>{{ transaction.Date }}</td>
-                    <td>{{ transaction['Business Establishment'] }}</td>
-                    <td>${{ "%.2f" | format(transaction.Amount) }}</td>
-                    <td>{{ transaction.Type }}</td>
-                    <td>{{ transaction.Category }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        {% else %}
-        <p>No transactions to display yet.</p>
-        {% endif %}
-    </div>
+                                    <input type="submit" value="Add Transaction">
+                            </form>
+                    </section>
+                </div>
+                <section id="balance-over-time">
+                    <h2>Balance Over Time</h2>
+                    <img src="{{ url_for('static', filename='plot.png') }}" alt="Balance Over Time Plot">
+                </section>
+
+                <section id="account-activity">
+                    <h2>Account Activity</h2>
+                    <p>Recorded Transactions:</p>
+                    {% if transactions %}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Business Establishment</th>
+                                <th>Amount</th>
+                                <th>Type</th>
+                                <th>Catagory</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for transaction in transactions %}
+                            <tr>
+                                <td>{{ transaction.Date }}</td>
+                                <td>{{ transaction['Business Establishment'] }}</td>
+                                <td>${{ "%.2f" | format(transaction.Amount) }}</td>
+                                <td>{{ transaction.Type }}</td>
+                                <td>{{ transaction.Category }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}
+                    <p>No transactions to display yet.</p>
+                    {% endif %}
+                </section>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
 

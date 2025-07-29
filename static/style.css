@@ -1,0 +1,177 @@
+/*style.css*/
+
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+/*HEADER*/
+header {
+    background-color: white;
+    width: 100%;
+    height: 96px;
+    padding: 10px 10px 0px 40px;
+    gap: 10px;
+    align-self: stretch;
+}
+
+header h1 {
+    color: #252525;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.rectangle {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-color: #383838;
+    left: 0;
+}
+
+/*CONTAINER FOR TWO COLUMNS*/
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 40px;
+    gap: 40px;
+    position: relative;
+}
+
+
+/*LEFT COLUMN*/
+.left-column {
+    flex: 0 0 250px;
+}
+
+/*RIGHT COLUMN*/
+.right-column {
+    flex: 1;
+}
+
+/*DIVIDER*/
+.content-container::after {
+    content: '';
+    display: block;
+    width: 2px;
+    background-color: #252525;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(250px + 20px);
+}
+
+/*FORM CSS FOR SETTING BUDGET*/
+/*I GOT THIS WITH GOOGLE GEMINI*/
+#setting-budget form {
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    gap: 10px; /* 10px space between items */
+}
+
+#setting-budget form label {
+    display: block; /* Ensures label takes its own line */
+    margin: 0; /* Reset any default margins */
+    font-weight: bold; /* Keep your label style */
+    color: #555; /* Keep your label color */
+}
+
+#setting-budget form input[type="number"] {
+    /* I had to hardcode the width */
+    width: 187px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Crucial: includes padding/border in the width calculation */
+    margin: 0; /* Reset any default margins */
+}
+
+#setting-budget form input[type="submit"] {
+    /* Had to hardcode the width */
+    width: 187px;
+    background-color: #1d51a9;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0; /* Reset any default margins */
+}
+
+#setting-budget form input[type="submit"]:hover {
+    background-color: #0b2b63;
+}
+
+/*FORM CSS FOR NEW TRANSACTIONS*/
+/*COPIED FROM PREVIOUS STEPS AND USED GOOGLE GEMINI*/
+#new-transaction form {
+    display: flex;
+    flex-direction: row; /* Keep items in a row */
+    align-items: center; /* VERTICALLY ALIGN CENTERS OF FLEX ITEMS */
+    flex-wrap: wrap; /* Allows items to wrap to the next line if space runs out */
+    gap: 10px; /* 10px space between each wrapped item */
+    /* Add some padding around the form content if needed */
+    padding: 10px 0;
+}
+
+/* Style for the wrapper divs for label-input pairs */
+#new-transaction form > div {
+    display: flex; /* Make the div a flex container */
+    flex-direction: column; /* Stack label and input vertically within the div */
+    /* Remove gap here if you don't want space between label and input */
+    gap: 5px; /* Small gap between label and input */
+    align-items: flex-start; /* Align label and input to the left within their div */
+}
+
+#new-transaction form label {
+    /* No need for display: flow-root; now, as the parent div handles layout */
+    margin: 0; /* Reset any default margins */
+    font-weight: bold;
+    color: #555;
+    white-space: nowrap; /* Prevent label text from wrapping */
+}
+
+#new-transaction form input[type="text"]{
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* IMPORTANT: Includes padding/border in width */
+    margin: 0; /* Reset any default margins, gap handles it */
+    /* Consider giving them a min-width or specific width if they become too small */
+    width: 190px; /* Example: Give them a fixed width, or a min-width */
+
+}
+
+#new-transaction form input[type="number"],
+#new-transaction form input[type="date"], /* Added date input */
+#new-transaction form select { /* Added select */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* IMPORTANT: Includes padding/border in width */
+    margin: 0; /* Reset any default margins, gap handles it */
+    /* Consider giving them a min-width or specific width if they become too small */
+    width: 150px; /* Example: Give them a fixed width, or a min-width */
+}
+
+
+#new-transaction form input[type="submit"] {
+    background-color: #1d51a9;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0; /* Reset any default margins */
+    min-width: 100px; /* Example min-width */
+}
+
+#new-transaction form input[type="submit"]:hover {
+    background-color: #0b2b63;
+}

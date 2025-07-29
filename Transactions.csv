@@ -1,20 +1,19 @@
-Date,Buisness Establishment,Amount,Type,Category,Description
-4/9/2025,JACKS,29.0,Purchase,Food/Groceries,
-4/8/2025,WAL-MART SUPERCENTER,8.78,Purchase,Miscellaneous,
-4/5/2025,AMC THEATERS,35.78,Purchase,Entertainment,
-4/3/2025,PAYPAL *CHEWY INC,77.92,Purchase,Miscellaneous,
-4/1/2025,BRAVO #16,25.17,Purchase,Transportation,
-4/1/2025,WAL-MART SUPERCENTER,10.75,Purchase,Miscellaneous,
-3/28/2025,WAL-MART SUPERCENTER,27.07,Purchase,Miscellaneous,
-3/22/2025,SUNOCO,25.98,Purchase,Transportation,
-3/12/2025,TJ MAXX,61.76,Purchase,Miscellaneous,
-3/12/2025,PAPAJOHNS,16.49,Purchase,Food/Groceries,
-3/12/2025,PAYPAL *FOREVER21,73.22,Purchase,Miscellaneous,
-3/12/2025,SEPHORA,88.41,Purchase,Miscellaneous,
-3/12/2025,ALDI,101.76,Purchase,Food/Groceries,
-3/9/2025,GRUBHUB,23.24,Purchase,Food/Groceries,
-3/8/2025,MARATHON,12.93,Purchase,Transportation,
-3/8/2025,PAYPAL*EBAY,63.86,Purchase,Miscellaneous,
-3/8/2025,UberEats,10.0,Purchase,Bills,
-2025-04-09,,18.54,Purchase,yes,Depop
-2025-07-15,,125.0,Purchase,yes,Mercari
+Date,Business Establishment,Amount,Type,Category
+2025-04-09 00:00:00,JACKS,29.0,Purchase,Food/Groceries
+2025-04-08 00:00:00,WAL-MART SUPERCENTER,8.78,Purchase,Miscellaneous
+2025-04-05 00:00:00,AMC THEATERS,35.78,Purchase,Entertainment
+2025-04-03 00:00:00,PAYPAL *CHEWY INC,77.92,Purchase,Miscellaneous
+2025-04-01 00:00:00,BRAVO #16,25.17,Purchase,Transportation
+2025-04-01 00:00:00,WAL-MART SUPERCENTER,10.75,Purchase,Miscellaneous
+2025-03-28 00:00:00,WAL-MART SUPERCENTER,27.07,Purchase,Miscellaneous
+2025-03-22 00:00:00,SUNOCO,25.98,Purchase,Transportation
+2025-03-12 00:00:00,TJ MAXX,61.76,Purchase,Miscellaneous
+2025-03-12 00:00:00,PAPAJOHNS,16.49,Purchase,Food/Groceries
+2025-03-12 00:00:00,PAYPAL *FOREVER21,73.22,Purchase,Miscellaneous
+2025-03-12 00:00:00,SEPHORA,88.41,Purchase,Miscellaneous
+2025-03-12 00:00:00,ALDI,101.76,Purchase,Food/Groceries
+2025-03-09 00:00:00,GRUBHUB,23.24,Purchase,Food/Groceries
+2025-03-08 00:00:00,MARATHON,12.93,Purchase,Transportation
+2025-03-08 00:00:00,PAYPAL*EBAY,63.86,Purchase,Miscellaneous
+2025-03-08 00:00:00,UberEats,10.0,Purchase,Bills
+2025-04-09,Depop,27.99,Purchase,Miscellaneous
